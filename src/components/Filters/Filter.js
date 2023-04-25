@@ -1,13 +1,11 @@
 import FilterName from './FilterName';
 import FilterHouse from './FilterHouse';
-import FilterGender from './FilterGender';
+
 const Filter = ({
   handleInputFilter,
   searchName,
   selectHouse,
   handleSelectHouse,
-  selectedGender,
-  handleSelectGender,
 }) => {
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -23,10 +21,6 @@ const Filter = ({
           handleSelectHouse={handleSelectHouse}
           selectHouse={selectHouse}
         ></FilterHouse>
-        <FilterGender
-          handleSelectGender={handleSelectGender}
-          selectedGender={selectedGender}
-        />
       </form>
     </section>
   );

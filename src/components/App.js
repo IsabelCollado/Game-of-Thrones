@@ -14,8 +14,8 @@ import Landing from './Landing';
 function App() {
   const [characterList, setCharacterList] = useState([]);
   const [searchName, setSearchName] = useState('');
-  const [selectHouse, setselectHouse] = useState('Gryffindor');
-  const [selectedGender, setSelectedGender] = useState('all');
+  const [selectHouse, setselectHouse] = useState('Targaryen');
+  //const [selectedGender, setSelectedGender] = useState('all');
 
   useEffect(() => {
     api.getCharactersHouse(selectHouse).then((infoCharacters) => {
@@ -29,27 +29,17 @@ function App() {
 
   const handleClickBtn = () => {
     setSearchName('');
-    setselectHouse('Gryffindor');
-    setSelectedGender('all');
+    setselectHouse('Targaryen');
   };
   const handleSelectHouse = (value) => {
     setselectHouse(value);
   };
-  const handleSelectGender = (value) => {
-    setSelectedGender(value);
-  };
 
-  const filterCharacterName = characterList
-    .filter((eachCharacter) => {
-      return eachCharacter.name
-        .toLocaleLowerCase()
-        .includes(searchName.toLocaleLowerCase());
-    })
-    .filter((eachCharacter) => {
-      return selectedGender === 'all'
-        ? true
-        : eachCharacter.gender === selectedGender;
-    });
+  const filterCharacterName = characterList.filter((eachCharacter) => {
+    return eachCharacter.firstName
+      .toLocaleLowerCase()
+      .includes(searchName.toLocaleLowerCase());
+  });
 
   const findCharacter = (value) => {
     return characterList.find((eachCharacter) => eachCharacter.id === value);
@@ -73,8 +63,6 @@ function App() {
                     handleInputFilter={handleInputFilter}
                     selectHouse={selectHouse}
                     handleSelectHouse={handleSelectHouse}
-                    selectedGender={selectedGender}
-                    handleSelectGender={handleSelectGender}
                   ></Filter>
                   <section className="errormsg">
                     {filterCharacterName.length > 0 ? (

@@ -6,11 +6,11 @@ const CharacterCard = ({ eachCharacter }) => {
       <li className="list_character">
         <img
           className="list_character_img"
-          src={eachCharacter.image}
-          alt={eachCharacter.name}
+          src={eachCharacter.imageUrl}
+          alt={eachCharacter.firstName}
         />
-        <p className="list_character_name">{eachCharacter.name}</p>
-        <p className="list_character_species">{eachCharacter.species}</p>
+        <p className="list_character_name">{eachCharacter.firstName}</p>
+        <p className="list_character_lastName">{eachCharacter.lastName}</p>
       </li>
     </NavLink>
   );

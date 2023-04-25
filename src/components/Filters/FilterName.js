@@ -5,7 +5,7 @@ const FilterName = ({ handleInputFilter, searchName }) => {
   return (
     <>
       <label htmlFor="searchCharacter" className="input_text">
-        Buscar por personaje:
+        Search by Character:
       </label>
       <input
         className="input_search"
@@ -13,7 +13,7 @@ const FilterName = ({ handleInputFilter, searchName }) => {
         autoComplete="off"
         name="name"
         id="name"
-        placeholder="ejemplo: Harry"
+        placeholder="Example: Daenerys"
         onInput={handleInput}
         value={searchName}
       />

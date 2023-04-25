@@ -1,20 +1,19 @@
 const Api = (eachCharacter) => {
   return {
-    name: eachCharacter.name,
     id: eachCharacter.id,
-    species: eachCharacter.species,
-    alive: eachCharacter.alive,
-    gender: eachCharacter.gender,
-    image:
-      eachCharacter.image !== ''
-        ? eachCharacter.image
+    firstName: eachCharacter.firstName,
+    lastName: eachCharacter.lastName,
+    title: eachCharacter.title,
+    imageUrl:
+      eachCharacter.imageUrl !== ''
+        ? eachCharacter.imageUrl
         : require('../images/userdefault.png.png'),
-    house: eachCharacter.house,
+    family: eachCharacter.family,
   };
 };
 
-const getCharactersHouse = (inputHouse) => {
-  const url = `https://hp-api.onrender.com/api/characters/house/${inputHouse}`;
+const getCharactersHouse = (inputFamily) => {
+  const url = `https://thronesapi.com/api/v2/Characters/`;
   return fetch(url)
     .then((response) => response.json())
     .then((data) => {
@@ -23,7 +22,7 @@ const getCharactersHouse = (inputHouse) => {
 };
 
 const getCharacters = (id) => {
-  return fetch(`https://hp-api.onrender.com/api/characters/${id}`)
+  return fetch(`https://thronesapi.com/api/v2/Characters/${id}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
