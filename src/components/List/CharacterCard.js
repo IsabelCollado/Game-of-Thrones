@@ -11,6 +11,8 @@ const CharacterCard = ({ eachCharacter }) => {
         />
         <p className="list_character_name">{eachCharacter.firstName}</p>
         <p className="list_character_lastName">{eachCharacter.lastName}</p>
+        <p className="list_character_title">{eachCharacter.title}</p>
+        <p className="list_character_family">{eachCharacter.family}</p>
       </li>
     </NavLink>
   );

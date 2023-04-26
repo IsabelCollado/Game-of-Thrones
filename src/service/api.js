@@ -12,7 +12,7 @@ const Api = (eachCharacter) => {
   };
 };
 
-const getCharactersHouse = (inputFamily) => {
+const getCharactersHouse = (inputHouse) => {
   const url = `https://thronesapi.com/api/v2/Characters/`;
   return fetch(url)
     .then((response) => response.json())

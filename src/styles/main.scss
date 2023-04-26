@@ -106,9 +106,11 @@
 }
 
 .list_character{
-    width: 8rem;
+    width: 10rem;
+    height: 15rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 0.25rem;
     margin: 0.5rem;
@@ -126,6 +128,21 @@
     font: $font-style-2;
     color:black;
    
+}
+.list_character_lastName{
+
+    font: $font-style-2;
+    color:black;
+}
+.list_character_title{
+
+    font: $font-style-2;
+    color:black;
+
+}
+.list_character_family{
+    font: $font-style-2;
+    color:black;
 }
 
 .list_character_species{
